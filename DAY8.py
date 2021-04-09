@@ -79,20 +79,20 @@ def decode(text_to_decode, shift_num):
 
 
 
-count = 0
-
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:")
-text = input("Type your message: ").lower()
-shift_number = int(input("Type the shift number: "))
-if direction == "encode":
-    encode(text_to_encode=text, shift_num=shift_number)
-else:
-    decode(text_to_decode=text, shift_num=shift_number)
-repeat = input("Type 'yes' if you want to go again. Otherwise type 'no'.")
-if repeat == "yes":
-    count = 1
-else:
-    count = 0
+count = 1
+while count:
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:")
+    text = input("Type your message: ").lower()
+    shift_number = int(input("Type the shift number: "))
+    if direction == "encode":
+        encode(text_to_encode=text, shift_num=shift_number)
+    else:
+        decode(text_to_decode=text, shift_num=shift_number)
+    repeat = input("Type 'yes' if you want to go again. Otherwise type 'no'.")
+    if repeat == "yes":
+        count = 1
+    else:
+        count = 0
 
 
 
